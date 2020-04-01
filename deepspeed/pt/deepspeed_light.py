@@ -360,8 +360,8 @@ class DeepSpeedLight(Module):
 
     def _init_distributed(self, dist_init_required):
         if self.local_rank >= 0:
-            torch.cuda.set_device(self.local_rank)
-            self.device = torch.device("cuda", self.local_rank)
+            #torch.cuda.set_device(self.local_rank)
+            self.device = torch.device("cuda")#torch.device("cuda", self.local_rank)
             self.world_size = dist.get_world_size()
             self.global_rank = dist.get_rank()
             logging.info("Set device to local rank {} within node.".format(

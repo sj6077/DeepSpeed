@@ -83,7 +83,7 @@ class ThroughputTimer():
     def __init__(self,
                  batch_size,
                  num_workers,
-                 start_step=2,
+                 start_step=200,
                  steps_per_output=50,
                  monitor_memory=True,
                  logging_fn=None):

@@ -112,6 +112,7 @@ def main():
             args.training_script,
             "--local_rank={}".format(local_rank)
         ] + args.training_script_args
+        current_env["CUDA_VISIBLE_DEVICES"] = str(local_rank)
         process = subprocess.Popen(cmd, env=current_env)
         processes.append(process)
 
